@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - D GourMeals</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .pay-container { 
+            max-width: 450px; 
+            margin: 80px auto; 
+            text-align: center; 
+            background: white; 
+            padding: 40px 30px; 
+            border-radius: 25px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            border-top: 8px solid #ffa600;
+        }
+        .bank-choice { 
+            display: flex; 
+            align-items: center; 
+            justify-content: flex-start; 
+            gap: 20px; 
+            padding: 18px 25px; 
+            margin: 15px 0; 
+            border: 1.5px solid #eee; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            font-weight: 700;
+            color: #374151;
+        }
+        .bank-choice:hover { 
+            border-color: #ffa600; 
+            background: #fffaf0; 
+            transform: translateY(-2px);
+        }
+        .bank-choice i { color: #ffa600; font-size: 1.4rem; }
+        
+        /* Gaya untuk paparan jumlah bayaran */
+        .total-pay-box {
+            background: #fffaf0;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #ffeeba;
+        }
+    </style>
+</head>
+<body style="background: #f3f4f6; font-family: 'Inter', sans-serif;">
+
+    <div class="pay-container">
+        <h2 style="color: #374151; margin-bottom: 10px;">Secure Payment</h2>
+        
+        <div class="total-pay-box">
+            <p style="margin:0; color: #6b7280; font-size: 13px;">Total amount you need to Pay:</p>
+            <h1 id="display-total" style="margin:5px 0; color: #ffa600;">RM 0.00</h1>
+        </div>
+
+        <p style="color: #6b7280; margin-bottom: 20px; font-size: 14px;">Please Select Your Bank:</p>
+
+        <div onclick="prosesBayar('RHB Online Banking')" class="bank-choice">
+            <i class="fas fa-university"></i> RHB Online Banking
+        </div>
+        
+        <div onclick="prosesBayar('Maybank2u')" class="bank-choice">
+            <i class="fas fa-university"></i> Maybank2u
+        </div>
+        <div onclick="prosesBayar('CIMB Clicks')" class="bank-choice">
+            <i class="fas fa-university"></i> CIMB Clicks
+        </div>
+        <div onclick="prosesBayar('Bank Islam')" class="bank-choice">
+            <i class="fas fa-university"></i> Bank Islam
+        </div>
+        <div onclick="prosesBayar('FPX')" class="bank-choice">
+            <i class="fas fa-credit-card"></i> FPX / Online Banking
+        </div>
+
+        <p style="font-size: 11px; color: #9ca3af; margin-top: 30px;">
+            *Simulations of payment for the HC13 UMSKAL Project.
+        </p>
+    </div>
+
+    <script>
+    // 1. Paparkan total harga yang user perlu bayar
+    document.addEventListener('DOMContentLoaded', () => {
+        const cart = JSON.parse(localStorage.getItem('D_GourMeals_Cart_v5')) || [];
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        document.getElementById('display-total').textContent = `RM ${total.toFixed(2)}`;
+    });
+
+    function prosesBayar(bankName) {
+        // Ambil maklumat lokasi/user yang disimpan masa set lokasi
+        const savedLocation = localStorage.getItem('umskal_delivery_location') || "Warga UMSKAL";
+        
+        const confirmPay = confirm("Continue Payment With " + bankName + "?");
+        
+        if(confirmPay) {
+            alert("Contact " + bankName + "...");
+            
+            setTimeout(() => {
+                alert(
+                    "✅ Payment Successful\n" +
+                    "----------------------------------\n" +
+                    "Status: SUCCESS\n" +
+                    "Bank: " + bankName + "\n" +
+                    "Sent To: User @ " + savedLocation + "\n" +
+                    "----------------------------------\n" +
+                    "Thank you! Rider will contact you immediately."
+                );
+
+                // Kosongkan troli
+                localStorage.setItem('D_GourMeals_Cart_v5', JSON.stringify([])); 
+                window.location.href = "../index.html";
+            }, 1000);
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Location - D GourMeals</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+
+        
+
+
+        .location-page {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+        .loc-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .input-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .input-box input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+        }
+        .saved-locations {
+            margin-top: 30px;
+        }
+        .saved-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .saved-item:hover {
+            background: #f8fafc;
+        }
+        .btn-save {
+            background: var(--second-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="background-color: #f3f4f6;">
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+                <i class="fas fa-bowl-food"></i> D Gour<span>Meals</span>
+            </div>
+            <a href="index.html" style="text-decoration: none; color: var(--second-color); font-weight: bold;">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </nav>
+    </header>
+
+    <div class="location-page">
+
+<div id="active-location-display" style="background: #ecfdf5; border: 1px solid #10b981; padding: 15px; border-radius: 15px; margin-bottom: 20px; display: none;">
+    <span style="font-size: 12px; color: #059669; font-weight: bold; text-transform: uppercase;">📍 Lokasi Aktif Sekarang:</span>
+    <p id="current-active-addr" style="margin: 5px 0 0 0; font-weight: 800; color: #064e3b; font-size: 16px;"></p>
+</div>
+
+        <div class="loc-card">
+            <h2>🏠 Set New Delivery Address</h2>
+            <p style="color: #6b7280; font-size: 14px;">Enter your block and room details at UMSKAL.</p>
+            
+            <div class="input-box">
+                <input type="text" id="new-loc-input" placeholder="Example: Beta College, Block B, 304">
+                <button class="btn-save" onclick="saveNewLocation()">Save</button>
+            </div>
+        </div>
+
+        <div class="saved-locations">
+            <h3>Recent & Suggested Locations</h3>
+            <div class="loc-card" id="saved-list">
+                <div class="saved-item" onclick="useLocation('Alpha Residential College')">
+                    <span><i class="fas fa-history"></i> Alpha Residential College</span>
+                    <i class="fas fa-chevron-right" style="color:#ccc;"></i>
+                </div>
+                <div class="saved-item" onclick="useLocation('Beta Residential College')">
+                    <span><i class="fas fa-history"></i> Beta Residential College</span>
+                    <i class="fas fa-chevron-right" style="color:#ccc;"></i>
+                </div>
+                <div class="saved-item" onclick="useLocation('UMSKAL Library')">
+                    <span><i class="fas fa-building"></i> UMSKAL Library</span>
+                    <i class="fas fa-chevron-right" style="color:#ccc;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+                <p>Your favorite food delivery service. Fresh meals delivered fast to your doorstep.</p>
+                <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px;">
+                    <a href="https://www.facebook.com/share/1HGrEek372/" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/umskal.official?igsh=MWlvN2ozNDZseTh0NQ==" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@estmk_media?_r=1&_t=ZS-92fpIKNpME1" style="color: white; font-size: 1.2rem;"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="A&C/AboutUs.html">Blog</a></li>
+                    <li><a href="GERAI/Menu.html">Menu</a></li>
+                    <li><a href="A&C/AboutUs.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="A&C/Contact.html">Help Center</a></li>
+                    <li><a href="Terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="contact-info" style="color: #9ca3af;">
+                    <p style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--second-color); margin-right: 10px;"></i> UMSKAL, Labuan, Malaysia</p>
+                    <p style="margin-bottom: 10px;"><i class="fas fa-phone" style="color: var(--second-color); margin-right: 10px;"></i> +60 87-123 456</p>
+                    <p><i class="fas fa-envelope" style="color: var(--second-color); margin-right: 10px;"></i> support@dgourmeals.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 D GourMeals. Made with <i class="fas fa-heart" style="color: #EC4899;"></i> For UMSKAL</p>
+        </div>
+    </footer>
+
+
+    <!-- GANTI seluruh <script> section dalam location.html -->
+<script>
+const STORAGE_KEY = 'umskal_saved_addresses';
+
+function saveNewLocation() {
+    const input = document.getElementById('new-loc-input');
+    const val = input.value.trim();
+
+    if (val !== "") {
+        let savedList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        savedList = savedList.filter(item => item !== val);
+        savedList.unshift(val); 
+        
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(savedList));
+        useLocation(val);
+    } else {
+        alert("Sila masukkan alamat bilik anda.");
+    }
+}
+
+function useLocation(val) {
+    // Save location to BOTH keys untuk compatibility
+    localStorage.setItem('umskal_delivery_location', val);
+    localStorage.setItem('delivery_location', val); // Backup key
+    
+    // Redirect to home
+    window.location.href = 'index.html';
+}
+
+function deleteSavedLocation(e, val) {
+    e.stopPropagation(); 
+    e.preventDefault();
+    
+    let savedList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    savedList = savedList.filter(item => item !== val);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedList));
+    loadSavedLocations(); 
+}
+
+function loadSavedLocations(showAll = false) {
+    const container = document.getElementById('saved-list');
+    if (!container) return;
+    
+    const savedList = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    const suggestions = ['Kolej Kediaman Alpha', 'Kolej Kediaman Beta', 'Perpustakaan UMSKAL'];
+
+    let htmlContent = '';
+    const displaySaved = showAll ? savedList : savedList.slice(0, 3);
+
+    displaySaved.forEach(loc => {
+        htmlContent += `
+            <div class="saved-item" onclick="useLocation('${loc}')">
+                <span><i class="fas fa-history" style="color: #6366f1;"></i> ${loc}</span>
+                <button class="delete-btn" onclick="deleteSavedLocation(event, '${loc}')">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        `;
+    });
+
+    suggestions.forEach(loc => {
+        htmlContent += `
+            <div class="saved-item" onclick="useLocation('${loc}')">
+                <span><i class="fas fa-building" style="color: #94a3b8;"></i> ${loc}</span>
+                <i class="fas fa-chevron-right" style="color:#ccc;"></i>
+            </div>
+        `;
+    });
+
+    if (!showAll && savedList.length > 3) {
+        htmlContent += `
+            <div onclick="loadSavedLocations(true)" style="text-align:center; padding:15px; color:var(--second-color); cursor:pointer; font-weight:bold; font-size:13px;">
+                View All History <i class="fas fa-chevron-down"></i>
+            </div>
+        `;
+    } else if (showAll) {
+        htmlContent += `
+            <div onclick="loadSavedLocations(false)" style="text-align:center; padding:15px; color:#6b7280; cursor:pointer; font-weight:bold; font-size:13px;">
+                Show Less <i class="fas fa-chevron-up"></i>
+            </div>
+        `;
+    }
+
+    container.innerHTML = htmlContent;
+}
+
+function updateActiveDisplay() {
+    const activeBox = document.getElementById('active-location-display');
+    const activeText = document.getElementById('current-active-addr');
+    const savedLoc = localStorage.getItem('umskal_delivery_location') || 
+                     localStorage.getItem('delivery_location');
+
+    if (savedLoc && savedLoc !== "Set Lokasi...") {
+        activeBox.style.display = 'block';
+        activeText.innerText = savedLoc;
+    } else {
+        activeBox.style.display = 'none';
+    }
+}
+
+// HANYA SATU DOMContentLoaded LISTENER!
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Location page loaded");
+    loadSavedLocations();
+    updateActiveDisplay();
+});
+</script>
+
+
+
+</body>
+</html>

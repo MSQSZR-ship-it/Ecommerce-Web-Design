@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D GourMeals - Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for restaurants or dishes...">
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+  <li><a href="#" id="cart-nav-link">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">0</span> </a>
+</li>                    
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                             <a href="GERAI/Menu.html">All</a>
+                            <a href="MENU/Breakfast.html">Breakfast</a>
+                            <a href="MENU/Lunch&Dinner.html">Lunch & Dinner</a>
+                            <a href="MENU/Beverage.html">Beverage</a>
+                            <a href="MENU/Dessert.html">Dessert</a>
+                            <a href="MENU/Vegan.html">Vegan</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Offers <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="Offer/promo.html">Seasonal Promo</a>
+                            <a href="Offer/seven.html">Vouchers</a>
+                            <a href="Offer/student.html">Student Deal</a>
+                        </div>
+                    </li>
+
+                    <li><a href="A&C/AboutUs.html">About Us</a></li>
+                    <li><a href="A&C/Contact.html">Contact</a></li>
+                    <li class="nav-btn"><a href="A&C/login.html" style="text-decoration: none;"><button class="btn-login"><i class="fas fa-user-circle"></i> Login</button></a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+        <span id="mobile-noti-dot"></span> <!-- DOT INI -->
+    </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="location-search-box" style="margin-bottom: 25px;">
+                <div class="input-group" onclick="window.location.href='location.html'" style="cursor:pointer;">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" id="user-location-input" placeholder="Set Lokasi Penghantaran..." readonly style="cursor:pointer;">
+                </div>
+                <button onclick="window.location.href='location.html'" id="save-location-btn" class="btn-location">Set Lokasi</button>
+            </div>
+
+            <span class="promo-pill">📍 Khusus Untuk Warga UMSKAL</span>
+            <h1>Lapar tapi malas mau keluar bilik?</h1>
+            <p>Masukkan lokasi anda dan kami hantar terus ke depan pintu!</p>
+
+            <button class="btn-order" onclick="window.location.href='GERAI/Menu.html'">Order Now</button>
+        </div>
+        
+        <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000" alt="Restaurant Interior" class="hero-img">
+            <div class="delivery-badge">
+                <i class="fas fa-bolt"></i>
+                <div>
+                    <span>Delivery in</span>
+                    <strong>15-30 min</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <main class="container">
+        <div class="section-header">
+            <div>
+                <h2>Popular Restaurants</h2>
+                <p>Top-rated places near you</p>
+            </div>
+            <a href="GERAI/Menu.html" class="more-link">More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="restaurant-grid" id="popular-container"></div>
+    </main>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 0 8%;">
+
+    <section class="categories-container">
+        <h3 class="cat-title">Browse by Category</h3>
+        <p class="cat-subtitle">Find exactly what you're craving</p>
+        
+        <div class="categories-grid" id="category-filters">
+            <div class="cat-card active" onclick="filterMenu('all', this)">
+                <div class="icon-circle green">🍽️</div>
+                <span>All</span>
+            </div>
+            <div class="cat-card" onclick="filterMenu('rice', this)">
+                <div class="icon-circle orange">🍚</div>
+                <span>Rice</span>
+            </div>
+            <div class="cat-card" onclick="filterMenu('noodles', this)">
+                <div class="icon-circle red">🍜</div>
+                <span>Noodles</span>
+            </div>
+            <div class="cat-card" onclick="filterMenu('fastfood', this)">
+                <div class="icon-circle yellow">🍔</div>
+                <span>Fast Food</span>
+            </div>
+            <div class="cat-card" onclick="filterMenu('drinks', this)">
+                <div class="icon-circle purple">🍹</div>
+                <span>Drinks</span>
+            </div>
+            <div class="cat-card" onclick="filterMenu('dessert', this)">
+                <div class="icon-circle pink">🍰</div>
+                <span>Dessert</span>
+            </div>
+        </div>
+
+        <div class="restaurant-grid" id="menu-container" style="margin-top: 40px; text-align: left;"></div>
+
+        <div style="text-align: right; margin-top: 20px; padding-right: 20px;">
+            <a href="GERAI/Menu.html" class="more-link" style="font-weight: bold; color: var(--second-color);">
+                View Full Menu <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header"> 
+            <h3>My Orders</h3>
+            <div style="display:flex; align-items:center; gap:15px;">
+                <button id="clear-cart-btn" style="background:none; border:none; color:#ff4d4d; cursor:pointer; font-size:1.1rem;">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                <button id="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <div class="cart-location-section">
+            <div class="loc-info">
+                <i class="fas fa-map-pin"></i>
+                <div>
+                    <span class="loc-label">Hantar ke:</span>
+                    <p id="cart-display-address" class="loc-address">Pilih Lokasi...</p>
+                </div>
+            </div>
+            <a href="location.html" class="btn-change-loc">Tukar</a>
+        </div>
+
+        <div class="cart-items" id="cart-items-container">
+            <p class="empty-msg">Your cart is empty.</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">RM 0.00</span>
+            </div><!--button chechk out paymant link-->
+            <button class="btn-checkout" onclick="window.location.href='A&C/payment.html'">Checkout Now</button>
+        </div>
+    </div>
+    
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+                <p>Your favorite food delivery service. Fresh meals delivered fast to your doorstep.</p>
+                <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px;">
+                    <a href="https://www.facebook.com/share/1HGrEek372/" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/umskal.official?igsh=MWlvN2ozNDZseTh0NQ==" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@estmk_media?_r=1&_t=ZS-92fpIKNpME1" style="color: white; font-size: 1.2rem;"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="A&C/AboutUs.html">Blog</a></li>
+                    <li><a href="GERAI/Menu.html">Menu</a></li>
+                    <li><a href="A&C/AboutUs.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="A&C/Contact.html">Help Center</a></li>
+                    <li><a href="Terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="contact-info" style="color: #9ca3af;">
+                    <p style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--second-color); margin-right: 10px;"></i> UMSKAL, Labuan, Malaysia</p>
+                    <p style="margin-bottom: 10px;"><i class="fas fa-phone" style="color: var(--second-color); margin-right: 10px;"></i> +60 87-123 456</p>
+                    <p><i class="fas fa-envelope" style="color: var(--second-color); margin-right: 10px;"></i> support@dgourmeals.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 D GourMeals. Made with <i class="fas fa-heart" style="color: #EC4899;"></i> For UMSKAL</p>
+        </div>
+    </footer>
+
+    <!-- CLEAR CART MODAL -->
+    <div id="custom-confirm" class="confirm-overlay">
+        <div class="confirm-box">
+            <div class="confirm-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Clear Cart?</h3>
+            <p>Adakah anda pasti mahu membuang semua pesanan dalam troli?</p>
+            <div class="confirm-btns">
+                <button id="confirm-cancel" class="btn-no">Batal</button>
+                <button id="confirm-yes" class="btn-yes">Ya, Padam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT FILES -->
+     
+<script src="script.js"></script>       <!-- LOAD 1 (MAIN LOGIC) -->
+<script src="cart-system.js"></script>  <!-- LOAD 2 (EXTENSION) -->
+<script src="java.js"></script>         <!-- LOAD 3 (EXTRAS) -->
+<script src="global-search.js"></script>
+
+
+</body>
+</html>

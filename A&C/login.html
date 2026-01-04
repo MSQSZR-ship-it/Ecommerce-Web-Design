@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - D GourMeals</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dg-orange: #ffa600; /* Warna oren D GourMeals */
+            --bg-light: #f4f7f6;
+            --text-main: #1f2937;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header D GourMeals */
+        header.dg-header {
+            background: white;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Banner Oren (Ganti Biru ITEL) */
+        .hero-banner {
+            background-color: var(--dg-orange);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .hero-banner h1 {
+            margin: 0;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-banner p {
+            margin-top: 8px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* Login Card */
+        .login-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .login-box { 
+            max-width: 400px; 
+            width: 90%;
+            padding: 40px; 
+            background: white; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05); 
+            text-align: center; 
+        }
+
+        .login-box h2 { 
+            color: var(--text-main); 
+            margin-bottom: 10px; 
+            font-weight: 600; 
+        }
+
+        /* Input & Button */
+        input#userInput { 
+            width: 100%; 
+            padding: 14px; 
+            margin: 20px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            text-align: center; 
+            box-sizing: border-box; 
+            background: #fdfdfd;
+            font-size: 1rem;
+        }
+
+        .btn-submit { 
+            width: 100%; 
+            background: var(--dg-orange); 
+            color: white; 
+            padding: 14px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            font-size: 1rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-submit:hover { 
+            background: #e69500; 
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 166, 0, 0.3);
+        }
+
+        .footer-info {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #999;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="dg-header">
+        <div style="display: flex; align-items: center; gap: 12px; font-weight: 800; color: var(--text-main);">
+            <img src="../ASSETS/DGourMealsLOGO.png" alt="Logo" height="45">
+            <span>D GOURMEALS</span>
+        </div>
+        <div style="color: var(--text-gray); font-size: 14px;">
+            <i class="fas fa-sign-in-alt"></i> Portal Login
+        </div>
+    </header>
+
+    <div class="hero-banner">
+        <h1>D GOURMEALS : CAMPUS FOOD DELIVERY SYSTEM</h1>
+        <p>Universiti Malaysia Sabah Kampus Antarabangsa Labuan (UMSKAL)</p>
+    </div>
+
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h2>Login to your account</h2>
+            <p style="font-size: 14px; color: var(--text-gray);">Please enter your matric number or number phone</p>
+            
+            <input type="text" id="userInput" placeholder="Example: BI24160744 / 0000000000">
+            
+            <button class="btn-submit" onclick="prosesLogin()">LOG IN</button>
+            
+            <div style="margin-top: 25px;">
+                <a href="../index.html" style="color: var(--text-gray); text-decoration: none; font-size: 13px; font-weight: 500;">
+                    <i class="fas fa-arrow-left"></i> Return To Main Page
+                </a>
+            </div>
+
+            <div class="footer-info">
+                <p>Authorized Student Access Only</p>
+                <p>Developed by: <strong>D GOUR Meals Team</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logik algoritma asal anda kekal berfungsi
+        function prosesLogin() {
+            const input = document.getElementById('userInput').value;
+            if (input.length >= 10) {
+                // Simpan status dalam browser
+                localStorage.setItem("isLoggedIn", "true"); 
+                alert("Login Succsesful! Welcome to D GourMeals Website.");
+                window.location.href = "../index.html"; 
+            } else {
+                alert("Please Enter At Least 10 digit number and Letters.");
+            }
+        }
+    </script>
+</body>
+</html>

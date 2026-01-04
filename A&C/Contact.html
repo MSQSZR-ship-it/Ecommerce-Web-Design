@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & AI Support - D GourMeals UMSKAL</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ========== CONTACT PAGE ENHANCEMENTS ========== */
+        
+        /* Hero Contact */
+        .contact-hero {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(255, 166, 0, 0.05) 100%);
+            padding: 80px 5%;
+            border-radius: 30px;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3.2rem;
+            color: #065F46;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .contact-hero p {
+            font-size: 1.2rem;
+            color: #4B5563;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        /* Contact Cards Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: #10B981;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+        }
+        
+        .contact-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #10B981, #FFA600);
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #10B981, #0da172);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .contact-card h3 {
+            color: #065F46;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-card p {
+            color: #4B5563;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        /* Live Support Badge */
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #dcfce7;
+            color: #065F46;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        /* Interactive Map */
+        .map-container {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 60px 0;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .map-header {
+            background: #065F46;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .map-frame {
+            height: 400px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4B5563;
+        }
+        
+        /* Support Team Avatars */
+        .team-avatars {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #10B981, #FFA600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Chatbot Enhancement */
+        .chatbot-wrapper {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-card {
+                padding: 25px;
+            }
+            
+            .map-frame {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                             <a href="../GERAI/Menu.html">All</a>
+                            <a href="../MENU/Breakfast.html">Breakfast</a>
+                            <a href="../MENU/Lunch&Dinner.html">Lunch & Dinner</a>
+                            <a href="../MENU/Beverage.html">Beverage</a>
+                            <a href="../MENU/Dessert.html">Dessert</a>
+                            <a href="../MENU/Vegan.html">Vegan</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Offers <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Offer/promo.html">Seasonal Promo</a>
+                            <a href="../Offer/seven.html">Vouchers</a>
+                            <a href="../Offer/student.html">Student Deal</a>
+                        </div>
+                    </li>
+
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="Contact.html" class="active">Contact</a></li>
+                    <li class="nav-btn"><a href="../A&C/login.html" style="text-decoration: none;"><button class="btn-login"><i class="fas fa-user-circle"></i> Login</button></a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                    <span id="mobile-noti-dot"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Hero Contact Section -->
+        <section class="contact-hero">
+            <h1>We're Here to Help</h1>
+            <p>Whether you have questions about our menu, need delivery support, or want to partner with us—our team and AI assistant are ready to assist you 24/7.</p>
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                Support Team Online Now
+            </div>
+        </section>
+
+        <!-- Contact Cards Grid -->
+        <div class="contact-grid">
+            <!-- Card 1: AI Support -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Assistant</h3>
+                <p>Get instant answers about menu items, prices, delivery zones, and operating hours. Available 24/7.</p>
+                <div class="team-avatars">
+                    <div class="avatar" title="GourBot AI">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Student Support -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Student Support</h3>
+                <p>Special assistance for UMSKAL students with meal plans, student discounts, and campus delivery.</p>
+                <div class="team-avatars">
+                    <div class="avatar" title="Ezaini">E</div>
+                    <div class="avatar" title="Syahfiq">S</div>
+                </div>
+            </div>
+
+            <!-- Card 3: Vendor Partnership -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Vendor Partnership</h3>
+                <p>Interested in joining our platform? Contact our partnership team for onboarding details.</p>
+                <div class="team-avatars">
+                    <div class="avatar" title="Sharul">S</div>
+                    <div class="avatar" title="Syahrizan">S</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Map -->
+        <div class="map-container">
+            <div class="map-header">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3 style="margin: 0; color: white;">Our Coverage Area in UMSKAL</h3>
+            </div>
+            <div class="map-frame">
+                <!-- Replace with actual Google Maps embed if needed -->
+                <div style="text-align: center; padding: 20px;">
+                    <i class="fas fa-map" style="font-size: 4rem; color: #10B981; margin-bottom: 15px;"></i>
+                    <h3 style="color: #065F46;">UMSKAL Delivery Map</h3>
+                    <p style="color: #4B5563; max-width: 1000px;">
+                        We deliver to all residential colleges, faculty buildings, and student centers within UMSKAL campus.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+                        <span style="background: #dcfce7; color: #065F46; padding: 8px 15px; border-radius: 20px;">KK Alpha/Beta</span>
+                        <span style="background: #dbeafe; color: #1e40af; padding: 8px 15px; border-radius: 20px;">Library</span>
+                        <span style="background: #ffebe0; color: #ff4343; padding: 8px 15px; border-radius: 20px;">DKP</span>
+                        <span style="background: #fcfdcd; color: #237a20; padding: 8px 15px; border-radius: 20px;">MENARA</span>
+                        <span style="background: #ebffe0; color: #882973; padding: 8px 15px; border-radius: 20px;">All Over UMSKAL</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced AI Chatbot -->
+        <div class="chatbot-wrapper" style="max-width: 500px; margin: 0 auto 40px; background: #fff; border-radius: 20px; box-shadow: 0 20px 50px rgba(16, 185, 129, 0.2); overflow: hidden; border: 2px solid #10B981; position: relative;">
+            <div style="background: linear-gradient(90deg, #10B981, #0da172); color: white; padding: 20px; display: flex; align-items: center; gap: 12px;">
+                <div style="background: white; color: #10B981; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: spin 10s linear infinite;">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 1.2rem;">GourBot AI Assistant</h3>
+                    <small style="opacity: 0.9;">Powered by Advanced NLP • v2.1</small>
+                </div>
+            </div>
+
+            <div id="chat-box" style="height: 350px; padding: 20px; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 15px;">
+                <div class="bot-message">
+                    <strong>🤖 GourBot:</strong><br>
+                    Hello! I'm your AI assistant. Ask me about:
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+                        <span style="background: #f0fdf4; color: #065F46; padding: 5px 10px; border-radius: 15px; font-size: 0.85rem;">Menu Items</span>
+                        <span style="background: #fffbeb; color: #92400e; padding: 5px 10px; border-radius: 15px; font-size: 0.85rem;">Delivery Fees</span>
+                        <span style="background: #fef2f2; color: #991b1b; padding: 5px 10px; border-radius: 15px; font-size: 0.85rem;">Operating Hours</span>
+                        <span style="background: #eff6ff; color: #1e40af; padding: 5px 10px; border-radius: 15px; font-size: 0.85rem;">Student Promo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding: 15px; background: white; border-top: 1px solid #eee; display: flex; gap: 10px;">
+                <input type="text" id="user-query" placeholder="Type your question here..." 
+                       style="flex: 1; padding: 12px 18px; border: 2px solid #e5e7eb; border-radius: 30px; outline: none; font-size: 0.95rem; transition: 0.3s;"
+                       onfocus="this.style.borderColor='#10B981';"
+                       onblur="this.style.borderColor='#e5e7eb';">
+                <button onclick="handleChat()" 
+                        style="background: linear-gradient(135deg, #10B981, #0da172); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.3s;"
+                        onmouseover="this.style.transform='scale(1.1)';"
+                        onmouseout="this.style.transform='scale(1)';">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <!-- Quick Questions -->
+            <div style="padding: 15px; background: #f8fafc; border-top: 1px solid #e5e7eb; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                <button onclick="quickQuestion('What are your operating hours?')" style="background: white; border: 1px solid #e5e7eb; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: 0.2s;">⏰ Hours</button>
+                <button onclick="quickQuestion('Do you deliver to KK Beta?')" style="background: white; border: 1px solid #e5e7eb; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: 0.2s;">📍 Delivery</button>
+                <button onclick="quickQuestion('What vegan options do you have?')" style="background: white; border: 1px solid #e5e7eb; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: 0.2s;">🌱 Vegan</button>
+                <button onclick="quickQuestion('How do I get student discount?')" style="background: white; border: 1px solid #e5e7eb; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: 0.2s;">🎓 Student</button>
+            </div>
+        </div>
+
+        <!-- Live Support Button -->
+        <div style="text-align: center; margin-bottom: 80px;">
+            <p style="color: #6B7280; font-size: 1rem; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Need to speak with a real person? Our student support team is available during campus hours.
+            </p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <a href="https://wa.me/60109465529?text=Hello%20D%20GourMeals!%20I%20need%20assistance." 
+                   target="_blank" 
+                   style="display: inline-flex; align-items: center; gap: 12px; background: #25D366; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); transition: 0.3s;"
+                   onmouseover="this.style.transform='translateY(-3px)';"
+                   onmouseout="this.style.transform='translateY(0)';">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Live Chat
+                </a>
+                
+                <a href="tel:+6087123456"
+                   style="display: inline-flex; align-items: center; gap: 12px; background: #10B981; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); transition: 0.3s;"
+                   onmouseover="this.style.transform='translateY(-3px)';"
+                   onmouseout="this.style.transform='translateY(0)';">
+                    <i class="fas fa-phone-alt"></i> Call: +60 87-123 456
+                </a>
+            </div>
+            
+            <p style="color: #9CA3AF; font-size: 0.9rem; margin-top: 25px;">
+                <i class="fas fa-clock"></i> Support Hours: 8:00 AM - 10:00 PM (Monday-Saturday)
+            </p>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+                <p>Your favorite food delivery service. Fresh meals delivered fast to your doorstep.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1HGrEek372/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/umskal.official?igsh=MWlvN2ozNDZseTh0NQ=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@estmk_media?_r=1&_t=ZS-92fpIKNpME1"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="AboutUs.html">Blog</a></li>
+                    <li><a href="../GERAI/Menu.html">Menu</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="Contact.html">Help Center</a></li>
+                    <li><a href="../Terms.html">Terms & Conditions</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> UMSKAL, Labuan, Malaysia</p>
+                    <p><i class="fas fa-phone"></i> +60 87-123 456</p>
+                    <p><i class="fas fa-envelope"></i> support@dgourmeals.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 D GourMeals. Made with <i class="fas fa-heart" style="color: #EC4899;"></i> For UMSKAL</p>
+        </div>
+    </footer>
+
+    <script src="../cart-system.js"></script>
+    <script src="../script.js"></script>
+    <script src="BotAI.js"></script>
+    
+    <script>
+    // Quick question function for buttons
+    function quickQuestion(question) {
+        document.getElementById('user-query').value = question;
+        handleChat();
+    }
+    
+    // Add animation for message sending
+    document.getElementById('user-query').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            handleChat();
+        }
+    });
+    
+    // Add CSS animation for robot icon
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+            background: #f3f4f6;
+            padding: 12px 16px;
+            border-radius: 15px 15px 15px 0;
+            max-width: 85%;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #374151;
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background: #10B981;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 15px 15px 0 15px;
+            max-width: 85%;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof updateCartUIEverywhere === 'function') {
+            updateCartUIEverywhere();
+        }
+    });
+    </script>
+</body>
+</html>

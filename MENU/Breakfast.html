@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><!-- CATEGORY NAME --> - D GourMeals</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="Design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for restaurants or dishes...">
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#" id="cart-nav-link">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">0</span> </a></a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content"> 
+                             <a href="../GERAI/Menu.html">All</a>
+                            <a href="Breakfast.html">Breakfast</a>
+                            <a href="Lunch&Dinner.html">Lunch & Dinner</a>
+                            <a href="Beverage.html">Beverage</a>
+                            <a href="Dessert.html">Dessert</a>
+                            <a href="Vegan.html">Vegan</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Offers <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#">Seasonal Promo</a>
+                            <a href="#">Vouchers</a>
+                            <a href="#">Student Deal</a>
+                        </div>
+                    </li>
+
+                    <li><a href="../A&C/AboutUs.html">About Us</a></li>
+                    <li><a href="../A&C/Contact.html">Contact</a></li>
+                    <li class="nav-btn"><a href="../A&C/login.html" style="text-decoration: none;"><button class="btn-login"><i class="fas fa-user-circle"></i> Login</button></a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                    <span id="mobile-noti-dot"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="promo-pill">📍 Khusus Untuk Warga UMSKAL</span>
+            <h1 id="category-hero-title"><!-- DYNAMIC TITLE --></h1>
+            <p id="category-hero-text"><!-- DYNAMIC TEXT --></p>
+        </div>
+        
+        <div class="hero-image-container">
+            <img id="category-hero-image" src="" alt="Category Image" class="hero-img">
+            <div class="delivery-badge">
+                <i class="fas fa-bolt"></i>
+                <div>
+                    <span>Delivery in</span>
+                    <strong>15-30 min</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <h2 id="page-title"><!-- CATEGORY NAME --> Menu</h2>
+        <div id="category-items-container" class="menu-grid"></div>
+    </main>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>My Orders</h3>
+            <div style="display:flex; align-items:center; gap:15px;">
+                <button id="clear-cart-btn" style="background:none; border:none; color:#ff4d4d; cursor:pointer; font-size:1.1rem;">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                <button id="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <div class="cart-location-section">
+            <div class="loc-info">
+                <i class="fas fa-map-pin"></i>
+                <div>
+                    <span class="loc-label">Hantar ke:</span>
+                    <p id="cart-display-address" class="loc-address">Loading...</p>
+                </div>
+            </div>
+            <a href="../location.html" class="btn-change-loc">Tukar</a>
+        </div>
+
+        <div class="cart-items" id="cart-items-container">
+            <!-- Cart items will be loaded here -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">RM 0.00</span>
+            </div> <!--button checkout-->
+            <button class="btn-checkout" onclick="processCheckout()">Checkout Now</button>
+        </div>
+    </div>
+    
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+                <p>Your favorite food delivery service. Fresh meals delivered fast to your doorstep.</p>
+                <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px;">
+                    <a href="https://www.facebook.com/share/1HGrEek372/" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/umskal.official?igsh=MWlvN2ozNDZseTh0NQ==" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@estmk_media?_r=1&_t=ZS-92fpIKNpME1" style="color: white; font-size: 1.2rem;"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                     <li><a href="../index.html">Home</a></li>
+                    <li><a href="../A&C/AboutUs.html">Blog</a></li>
+                    <li><a href="../GERAI/Menu.html">Menu</a></li>
+                    <li><a href="../A&C/AboutUs.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul><!--link footer-->
+                    <li><a href="../A&C/Contact.html">Help Center</a></li>
+                    <li><a href="../Terms.html">Terms & Conditions</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="contact-info" style="color: #9ca3af;">
+                    <p style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--second-color); margin-right: 10px;"></i> UMSKAL, Labuan, Malaysia</p>
+                    <p style="margin-bottom: 10px;"><i class="fas fa-phone" style="color: var(--second-color); margin-right: 10px;"></i> +60 87-123 456</p>
+                    <p><i class="fas fa-envelope" style="color: var(--second-color); margin-right: 10px;"></i> support@dgourmeals.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 D GourMeals. Made with <i class="fas fa-heart" style="color: #EC4899;"></i> For UMSKAL</p>
+        </div>
+    </footer>
+
+    <!-- CLEAR CART MODAL -->
+    <div id="custom-confirm" class="confirm-overlay">
+        <div class="confirm-box">
+            <div class="confirm-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Clear Cart?</h3>
+            <p>Adakah anda pasti mahu membuang semua pesanan dalam troli?</p>
+            <div class="confirm-btns">
+                <button id="confirm-cancel" class="btn-no">Batal</button>
+                <button id="confirm-yes" class="btn-yes">Ya, Padam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT FILES - UPDATED ORDER -->
+<script src="../cart-system.js"></script>      <!-- UNIVERSAL CART FIRST -->
+<script src="../GERAI/java.js"></script>      <!-- LOAD GERAI DATA -->
+<script src="../script.js"></script>          <!-- MAIN SCRIPT -->
+<script src="Menujava.js"></script>           <!-- ENHANCED CATEGORY SCRIPT -->
+<script src="../global-search.js"></script>
+
+
+    <script>
+        // CATEGORY CONFIGURATION
+        const categoryConfig = {
+            'beverage': {
+                title: 'Beverage',
+                heroTitle: 'Haus tapi malas mau keluar bilik?',
+                heroText: 'Minuman segar dihantar terus ke depan pintu!',
+                heroImage: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&h=600&auto=format&fit=crop',
+                category: 'drinks'
+            },
+            'breakfast': {
+                title: 'Breakfast', 
+                heroTitle: 'Sarapan pagi yang ringkas dan sedap!',
+                heroText: 'Mulakan hari anda dengan sarapan terbaik.',
+                heroImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1000&h=600&auto=format&fit=crop',
+                category: 'breakfast'
+            },
+            'lunch': {
+                title: 'Lunch & Dinner',
+                heroTitle: 'Makan tengahari atau malam yang mengenyangkan!',
+                heroText: 'Hidangan utama yang sedap dan berkhasiat.',
+                heroImage: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1000&h=600&auto=format&fit=crop',
+                category: 'lunch'
+            },
+            'dessert': {
+                title: 'Dessert',
+                heroTitle: 'Manis-manis untuk penutup yang sempurna!',
+                heroText: 'Pencuci mulut yang menyelerakan.',
+                heroImage: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1000&h=600&auto=format&fit=crop',
+                category: 'dessert'
+            },
+            'vegan': {
+                title: 'Vegan',
+                heroTitle: 'Makanan sihat untuk gaya hidup vegan!',
+                heroText: 'Hidangan berasaskan tumbuhan yang berkhasiat.',
+                heroImage: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1000&h=600&auto=format&fit=crop',
+                category: 'vegan'
+            }
+        };
+
+        // Get current category from URL
+        function getCurrentCategory() {
+            const path = window.location.pathname;
+            const filename = path.split('/').pop().toLowerCase();
+            
+            if (filename.includes('beverage')) return 'beverage';
+            if (filename.includes('breakfast')) return 'breakfast';
+            if (filename.includes('lunch')) return 'lunch';
+            if (filename.includes('dessert')) return 'dessert';
+            if (filename.includes('vegan')) return 'vegan';
+            
+            return 'beverage'; // default
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Category page loaded, initializing...");
+            
+            // Get current category
+            const currentCat = getCurrentCategory();
+            const config = categoryConfig[currentCat];
+            
+            if (!config) {
+                console.error("Category configuration not found!");
+                return;
+            }
+            
+            // Update page content
+            document.title = config.title + " - D GourMeals";
+            document.getElementById('category-hero-title').textContent = config.heroTitle;
+            document.getElementById('category-hero-text').textContent = config.heroText;
+            document.getElementById('category-hero-image').src = config.heroImage;
+            document.getElementById('page-title').textContent = config.title + " Menu";
+            
+            // Initialize cart
+            if (typeof updateCartUIEverywhere === 'function') {
+                updateCartUIEverywhere();
+            } else if (typeof updateCartUI === 'function') {
+                updateCartUI();
+            }
+            
+            // Render category items
+            setTimeout(function() {
+                if (typeof renderCategoryPage === 'function') {
+                    console.log("Rendering category:", config.category);
+                    renderCategoryPage(config.category, 'category-items-container');
+                } else {
+                    console.error("renderCategoryPage function not found!");
+                }
+            }, 300);
+            
+            // Setup cart event listeners
+            setupCartEventListeners();
+        });
+        
+        function setupCartEventListeners() {
+            const cartNavLink = document.getElementById('cart-nav-link');
+            const closeCartBtn = document.getElementById('close-cart');
+            const cartOverlay = document.getElementById('cart-overlay');
+            const clearCartBtn = document.getElementById('clear-cart-btn');
+            const confirmYes = document.getElementById('confirm-yes');
+            const confirmCancel = document.getElementById('confirm-cancel');
+            const modal = document.getElementById('custom-confirm');
+            
+            // Cart navigation
+            if (cartNavLink) {
+                cartNavLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (typeof openCart === 'function') {
+                        openCart();
+                    }
+                });
+            }
+            
+            // Close cart
+            if (closeCartBtn) closeCartBtn.addEventListener('click', function() {
+                if (typeof closeCart === 'function') closeCart();
+            });
+            
+            if (cartOverlay) cartOverlay.addEventListener('click', function() {
+                if (typeof closeCart === 'function') closeCart();
+            });
+            
+            // Clear cart modal
+            if (clearCartBtn) {
+                clearCartBtn.addEventListener('click', function() {
+                    const cart = JSON.parse(localStorage.getItem('D_GourMeals_Cart')) || [];
+                    if (cart.length > 0 && modal) {
+                        modal.style.display = 'flex';
+                    }
+                });
+            }
+            
+            if (confirmYes) {
+                confirmYes.addEventListener('click', function() {
+                    localStorage.setItem('D_GourMeals_Cart', JSON.stringify([]));
+                    
+                    // Update cart UI
+                    if (typeof updateCartUIEverywhere === 'function') {
+                        updateCartUIEverywhere();
+                    } else if (typeof updateCartUI === 'function') {
+                        updateCartUI();
+                    }
+                    
+                    if (modal) modal.style.display = 'none';
+                });
+            }
+            
+            if (confirmCancel) {
+                confirmCancel.addEventListener('click', function() {
+                    if (modal) modal.style.display = 'none';
+                });
+            }
+            
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            }
+        }
+        
+        // Update cart on page show
+        window.onpageshow = function(event) {
+            if (typeof updateCartUIEverywhere === 'function') {
+                updateCartUIEverywhere();
+            } else if (typeof updateCartUI === 'function') {
+                updateCartUI();
+            }
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo & Voucher - D'GourMeals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="offer.css">
+    <style>
+        /* Promo Specific Styles */
+        .promo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Daily Login Rewards */
+        .login-rewards-section {
+            margin-bottom: 40px;
+        }
+
+        .login-rewards-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .login-reward-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: transform 0.3s;
+        }
+
+        .login-reward-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .login-reward-card.claimed {
+            border-color: #2ecc71;
+            background: #f0fff4;
+        }
+
+        .reward-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #fdcb6e, #e17055);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .reward-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin: 15px 0;
+        }
+
+        .reward-value span {
+            font-size: 1rem;
+            color: #636e72;
+            font-weight: normal;
+        }
+
+        .reward-claim-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .reward-claim-btn:hover:not(:disabled) {
+            background: #2980b9;
+        }
+
+        .reward-claim-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .reward-claim-btn.claimed {
+            background: #2ecc71;
+        }
+
+        .streak-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+
+        .streak-days {
+            font-weight: 700;
+            color: #e74c3c;
+        }
+
+        /* Promo Cards Section */
+        .promo-cards-section {
+            margin-top: 40px;
+        }
+
+        .promo-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .promo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .promo-card-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            position: relative;
+        }
+
+        .promo-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .promo-card-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .promo-card-subtitle {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .promo-card-body {
+            padding: 25px;
+        }
+
+        .promo-restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .promo-restaurant-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .promo-restaurant-item:hover {
+            transform: scale(1.05);
+        }
+
+        .promo-restaurant-img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .promo-restaurant-name {
+            font-weight: 600;
+            color: #2d3436;
+            font-size: 0.9rem;
+        }
+
+        .promo-terms {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        .promo-terms h4 {
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+
+        .promo-terms ul {
+            padding-left: 20px;
+        }
+
+        .promo-terms li {
+            margin-bottom: 5px;
+        }
+
+        .promo-code-box {
+            background: #f1f2f6;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .promo-code {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #2d3436;
+            margin: 10px 0;
+        }
+
+        .copy-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px auto 0;
+        }
+
+        .copy-btn:hover {
+            background: #2980b9;
+        }
+
+        /* Event Promo Cards */
+        .event-promos {
+            margin-top: 40px;
+        }
+
+        .event-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+        }
+
+        .event-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-card p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-date {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-card:nth-child(2) {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+        }
+
+        .event-card:nth-child(3) {
+            background: linear-gradient(135deg, #00cec9, #00b894);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin: 20px 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #fdcb6e, #e17055);
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .login-rewards-cards,
+            .promo-cards-grid,
+            .event-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .promo-restaurant-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="offer-nav">
+        <button class="offer-nav-btn" onclick="showSection('promo')" id="promoBtn">
+            <i class="fas fa-tag"> <a href="promo.html">Promo & Voucher</a></i> 
+        </button>
+        <button class="offer-nav-btn" onclick="showSection('student')">
+            <i class="fas fa-graduation-cap"><a href="student.html"></a></i> Student Deals
+        </button>
+        <button class="offer-nav-btn" onclick="showSection('seven')">
+            <i class="fas fa-calendar-alt"><a href="seven.html"></a></i> 7 Days Challenge
+        </button>
+    </div>
+
+    <!-- Promo Section -->
+    <section id="promo-section" class="offer-section active">
+        <div class="promo-container">
+            <!-- Daily Login Rewards -->
+            <div class="login-rewards-section">
+                <div class="section-header">
+                    <h1><i class="fas fa-gift"></i> Daily Login Rewards</h1>
+                    <p>Login setiap hari untuk claim voucher percuma! Semakin panjang streak, semakin besar hadiah!</p>
+                </div>
+
+                <div class="login-rewards-cards" id="loginRewardsContainer">
+                    <!-- Cards will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Promo Cards -->
+            <div class="promo-cards-section">
+                <div class="section-header">
+                    <h1><i class="fas fa-ticket-alt"></i> Promo Cards Available</h1>
+                    <p>Redeem promo code untuk dapatkan diskaun di restoran pilihan</p>
+                </div>
+
+                <div class="promo-cards-grid">
+                    <!-- Promo Card 1 -->
+                    <div class="promo-card">
+                        <div class="promo-card-header">
+                            <div class="promo-badge">FREE DELIVERY</div>
+                            <h3 class="promo-card-title">Free Delivery Weekend</h3>
+                            <p class="promo-card-subtitle">Sabtu & Ahad sahaja</p>
+                        </div>
+                        <div class="promo-card-body">
+                            <p><strong>Promo Code:</strong> <span class="promo-code">FREEKEND</span></p>
+                            <p><strong>Diskaun:</strong> Free delivery untuk semua order > RM15</p>
+                            <p><strong>Tempoh:</strong> 15 Feb - 15 Mac 2024</p>
+                            
+                            <div class="progress-container">
+                                <div class="progress-label">
+                                    <span>Promo digunakan</span>
+                                    <span>65%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="promo-terms">
+                                <h4>Syarat:</h4>
+                                <ul>
+                                    <li>Minimum order RM15</li>
+                                    <li>Sabtu & Ahad sahaja</li>
+                                    <li>Boleh digabung dengan voucher lain</li>
+                                </ul>
+                            </div>
+                            
+                            <button class="copy-btn" onclick="copyPromoCode('FREEKEND')">
+                                <i class="fas fa-copy"></i> Copy Promo Code
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Promo Card 2 -->
+                    <div class="promo-card">
+                        <div class="promo-card-header">
+                            <div class="promo-badge">20% OFF</div>
+                            <h3 class="promo-card-title">Student Week Special</h3>
+                            <p class="promo-card-subtitle">Untuk semua pelajar</p>
+                        </div>
+                        <div class="promo-card-body">
+                            <p><strong>Promo Code:</strong> <span class="promo-code">STUDENT20</span></p>
+                            <p><strong>Diskaun:</strong> 20% untuk semua menu</p>
+                            <p><strong>Tempoh:</strong> Setiap hari Isnin</p>
+                            
+                            <div class="progress-container">
+                                <div class="progress-label">
+                                    <span>Promo digunakan</span>
+                                    <span>42%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 42%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="promo-terms">
+                                <h4>Syarat:</h4>
+                                <ul>
+                                    <li>Perlu verify status pelajar</li>
+                                    <li>Minimum order RM10</li>
+                                    <li>Maksimum diskaun RM5</li>
+                                </ul>
+                            </div>
+                            
+                            <button class="copy-btn" onclick="copyPromoCode('STUDENT20')">
+                                <i class="fas fa-copy"></i> Copy Promo Code
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Promo Card 3 -->
+                    <div class="promo-card">
+                        <div class="promo-card-header">
+                            <div class="promo-badge">BUY 1 FREE 1</div>
+                            <h3 class="promo-card-title">Burger Mania</h3>
+                            <p class="promo-card-subtitle">Khas untuk Burger King</p>
+                        </div>
+                        <div class="promo-card-body">
+                            <p><strong>Promo Code:</strong> <span class="promo-code">BURGERBOGO</span></p>
+                            <p><strong>Diskaun:</strong> Beli 1 Whopper, Free 1 Cheese Burger</p>
+                            <p><strong>Tempoh:</strong> Terhad untuk 500 redemption sahaja</p>
+                            
+                            <div class="progress-container">
+                                <div class="progress-label">
+                                    <span>Promo digunakan</span>
+                                    <span>78%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="promo-terms">
+                                <h4>Syarat:</h4>
+                                <ul>
+                                    <li>Hanya untuk Whopper burger</li>
+                                    <li>Free cheese burger saiz regular</li>
+                                    <li>Tidak termasuk delivery fee</li>
+                                </ul>
+                            </div>
+                            
+                            <button class="copy-btn" onclick="copyPromoCode('BURGERBOGO')">
+                                <i class="fas fa-copy"></i> Copy Promo Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Promos -->
+            <div class="event-promos">
+                <div class="section-header">
+                    <h1><i class="fas fa-calendar-star"></i> Event Promo di Kampus</h1>
+                    <p>Promo eksklusif dari event-event kampus yang sedang berlangsung</p>
+                </div>
+
+                <div class="event-cards">
+                    <!-- Event 1 -->
+                    <div class="event-card">
+                        <div class="event-date">15-20 Mac 2024</div>
+                        <h3>Tech Fest 2024</h3>
+                        <p>Dapatkan 15% diskaun di semua gerai makanan dengan menunjukkan wristband Tech Fest</p>
+                        <button class="btn-primary" onclick="viewEventStores('techfest')">
+                            <i class="fas fa-store"></i> Lihat Gerai Penyertaan
+                        </button>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="event-card">
+                        <div class="event-date">Setiap Rabu</div>
+                        <h3>Wellness Wednesday</h3>
+                        <p>Free minuman sihat dengan setiap pembelian salad atau makanan sihat</p>
+                        <button class="btn-primary" onclick="viewEventStores('wellness')">
+                            <i class="fas fa-store"></i> Lihat Gerai Penyertaan
+                        </button>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="event-card">
+                        <div class="event-date">1-30 April 2024</div>
+                        <h3>Ramadan Bazaar</h3>
+                        <p>Special promo untuk berbuka puasa dari pelbagai gerai bazaar</p>
+                        <button class="btn-primary" onclick="viewEventStores('ramadan')">
+                            <i class="fas fa-store"></i> Lihat Gerai Penyertaan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="offer.js"></script>
+    <script>
+        // Load restaurant data from java.js
+        const restaurantData = window.restaurantData || {};
+        const localRestaurants = window.localRestaurants || {};
+        const allStores = { ...restaurantData, ...localRestaurants };
+
+        // Daily login rewards data
+        const dailyRewards = [
+            { day: 1, reward: "RM1", icon: "fas fa-coins", claimed: false },
+            { day: 2, reward: "RM2", icon: "fas fa-money-bill-wave", claimed: false },
+            { day: 3, reward: "Free Drink", icon: "fas fa-wine-glass-alt", claimed: false },
+            { day: 4, reward: "RM3", icon: "fas fa-gem", claimed: false },
+            { day: 5, reward: "15% Off", icon: "fas fa-percentage", claimed: false },
+            { day: 6, reward: "Free Delivery", icon: "fas fa-shipping-fast", claimed: false },
+            { day: 7, reward: "RM5", icon: "fas fa-crown", claimed: false }
+        ];
+
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.offer-section').forEach(s => {
+                s.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(`${section}-section`).classList.add('active');
+            
+            // Update active button
+            document.querySelectorAll('.offer-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        function copyPromoCode(code) {
+            navigator.clipboard.writeText(code)
+                .then(() => {
+                    alert(`Promo code "${code}" copied to clipboard!`);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        }
+
+        function viewEventStores(eventType) {
+            // Store event type in localStorage and redirect to main page
+            localStorage.setItem('selected_event', eventType);
+            window.location.href = '../index.html'; // Adjust path as needed
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load login rewards
+            const rewardsContainer = document.getElementById('loginRewardsContainer');
+            if (rewardsContainer) {
+                let html = '';
+                dailyRewards.forEach((reward, index) => {
+                    const isToday = index === 0; // Simulate day 1 is today
+                    html += `
+                        <div class="login-reward-card ${isToday ? '' : 'claimed'}">
+                            <div class="reward-icon">
+                                <i class="${reward.icon}"></i>
+                            </div>
+                            <h3>Day ${reward.day}</h3>
+                            <div class="reward-value">${reward.reward}</div>
+                            <button class="reward-claim-btn ${isToday ? '' : 'claimed'}" 
+                                    onclick="claimReward(${reward.day})" 
+                                    ${isToday ? '' : 'disabled'}>
+                                ${isToday ? 'CLAIM NOW' : 'CLAIMED'}
+                            </button>
+                            ${isToday ? `
+                                <div class="streak-counter">
+                                    <i class="fas fa-fire"></i>
+                                    <span>Current streak: <span class="streak-days">${reward.day} days</span></span>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                });
+                rewardsContainer.innerHTML = html;
+            }
+        });
+
+        function claimReward(day) {
+            const rewards = JSON.parse(localStorage.getItem('daily_rewards')) || {};
+            rewards[`day_${day}`] = {
+                claimed: true,
+                date: new Date().toISOString(),
+                reward: dailyRewards.find(r => r.day === day).reward
+            };
+            
+            localStorage.setItem('daily_rewards', JSON.stringify(rewards));
+            
+            // Update UI
+            const btn = event.currentTarget;
+            btn.textContent = 'CLAIMED';
+            btn.disabled = true;
+            btn.classList.add('claimed');
+            btn.parentElement.classList.add('claimed');
+            
+            alert(`Congratulations! You claimed ${dailyRewards.find(r => r.day === day).reward} reward!`);
+        }
+
+        // Make functions available globally
+        window.showSection = showSection;
+        window.copyPromoCode = copyPromoCode;
+        window.viewEventStores = viewEventStores;
+        window.claimReward = claimReward;
+    </script>
+</body>
+</html>

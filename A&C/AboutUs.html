@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - D GourMeals UMSKAL</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="blog.css"> <!-- TAMBAH INI! -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional styles for this page */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        /* Organization Chart Fix */
+        .org-section {
+            padding: 60px 0;
+        }
+        
+        .org-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .org-title h2 {
+            color: #065F46;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .org-title p {
+            color: #6B7280;
+            font-size: 1.1rem;
+        }
+        
+        /* Make member-card use blog.css styles */
+        .member-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-bottom: 5px solid var(--main-color);
+            transition: 0.3s;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-card i {
+            font-size: 3rem;
+            color: var(--main-color);
+            margin-bottom: 15px;
+        }
+        
+        .member-card h4 {
+            margin: 10px 0 5px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+        
+        .member-card span {
+            color: var(--second-color);
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        
+        .member-card p {
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .btn-order {
+            background: var(--second-color);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 15px 35px rgba(255, 166, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-order:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(255, 166, 0, 0.4);
+        }
+        
+        /* Hero Section for About Us */
+        .about-hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: #f0fdf4;
+            border-radius: 20px;
+            margin: 40px 0 60px;
+        }
+        
+        .about-hero h1 {
+            color: #064e3b;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-hero p {
+            color: #374151;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+        }
+        
+        /* Journey Section */
+        .journey-section {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+        }
+        
+        .journey-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .journey-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .journey-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .journey-content h2 {
+            color: #065F46;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+        
+        .journey-content p {
+            line-height: 1.8;
+            color: #4B5563;
+            margin-bottom: 20px;
+        }
+        
+        .why-box {
+            background: white;
+            padding: 25px;
+            border-left: 5px solid #10B981;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 15px;
+        }
+        
+        .why-box h3 {
+            color: #10B981;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .why-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .why-box li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Milestones Slider */
+        .dev-milestones {
+            margin: 60px 0;
+        }
+        
+        .milestones-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .milestones-title h2 {
+            color: #065F46;
+            font-size: 2rem;
+        }
+        
+        .blog-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 10px 40px;
+            scrollbar-width: thin;
+        }
+        
+        .slide-card {
+            flex: 0 0 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .slide-card i {
+            font-size: 2.5rem;
+            color: #10B981;
+            margin-bottom: 20px;
+        }
+        
+        .slide-card h3 {
+            color: #065F46;
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .org-title h2 {
+                font-size: 2rem;
+            }
+            
+            .journey-section {
+                flex-direction: column;
+            }
+            
+            .blog-slider {
+                gap: 20px;
+            }
+            
+            .slide-card {
+                flex: 0 0 280px;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+                
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Menu <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                             <a href="../GERAI/Menu.html">All</a>
+                            <a href="../MENU/Breakfast.html">Breakfast</a>
+                            <a href="../MENU/Lunch&Dinner.html">Lunch & Dinner</a>
+                            <a href="../MENU/Beverage.html">Beverage</a>
+                            <a href="../MENU/Dessert.html">Dessert</a>
+                            <a href="../MENU/Vegan.html">Vegan</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Offers <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../Offer/promo.html">Seasonal Promo</a>
+                            <a href="../Offer/seven.html">Vouchers</a>
+                            <a href="../Offer/student.html">Student Deal</a>
+                        </div>
+                    </li>
+
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li class="nav-btn"><a href="login.html" style="text-decoration: none;"><button class="btn-login"><i class="fas fa-user-circle"></i> Login</button></a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                    <span id="mobile-noti-dot"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <h1>Serving the Heart of UMSKAL</h1>
+            <p>D GourMeals is a specialized <strong>Campus Food Delivery Network</strong> prototype, developed for the Labuan International Campus community.</p>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="journey-section">
+            <div class="journey-image">
+                <img src="../ASSETS/DGourMealsLOGO.png" alt="D GourMeals Team">
+            </div>
+            <div class="journey-content">
+                <h2>Our Journey</h2>
+                <p>Founded by a dedicated group of <strong>Business Computing (HC13)</strong> students, D GourMeals was born out of a mission to provide UMSKAL residents with high-quality dining options right at their doorstep.</p>
+                <div class="why-box">
+                    <h3>Why UMSKAL Students Love Us:</h3>
+                    <ul>
+                        <li><i class="fas fa-bolt" style="color: #10B981; margin-right: 10px;"></i> <strong>Fast Delivery</strong> to residential colleges.</li>
+                        <li><i class="fas fa-tags" style="color: #10B981; margin-right: 10px;"></i> <strong>Student Prices</strong> for every budget.</li>
+                        <li><i class="fas fa-robot" style="color: #10B981; margin-right: 10px;"></i> <strong>AI Assistant</strong> 24/7 support.</li>
+                        <li><i class="fas fa-clock" style="color: #10B981; margin-right: 10px;"></i> <strong>Extended Hours</strong> until 9 PM.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Milestones -->
+        <section class="dev-milestones">
+            <div class="milestones-title">
+                <h2>Development Milestones</h2>
+                <p>Swipe or scroll to explore our project journey <i class="fas fa-arrow-right"></i></p>
+            </div>
+
+            <div class="blog-slider">
+                <div class="slide-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Idea Formation</h3>
+                    <p>We identified that UMSKAL students struggle to get fresh meals during peak hours. Our mission was to create a digital bridge between vendors and campus colleges.</p>
+                </div>
+
+                <div class="slide-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Why This Topic?</h3>
+                    <p>Based on our survey of 35 respondents, students requested fast delivery and student-friendly pricing. This addresses a real need in our campus community.</p>
+                </div>
+
+                <div class="slide-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Our Challenges</h3>
+                    <p>Ensuring a responsive mobile design and integrating a functional AI Chatbot (dummy) to handle automated responses were our main technical hurdles.</p>
+                </div>
+
+                <div class="slide-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Innovation</h3>
+                    <p>We integrated 'GourBot AI' to provide 24/7 support, fulfilling the IE12103 requirement for at least one AI-driven function in our e-commerce design.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organization Chart -->
+        <section class="org-section">
+            <div class="org-title">
+                <h2>Our Organization Chart</h2>
+                <p>Technical & Management Team (HC13)</p>
+            </div>
+
+            <div class="org-grid">
+                <!-- Kad 1 -->
+                <div class="member-card">
+                    <i class="fas fa-microchip"></i>
+                    <h4>Mohammad Ezaini bin Mohd Ali</h4>
+                    <span>Full-Stack Developer (AI & Logic)</span>
+                    <p>Specializing in AI Chatbot integration and complex Menu-Submenu logic.</p>
+                </div>
+
+                <!-- Kad 2 -->
+                <div class="member-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Mohammad Syahfiq Syahhzmir</h4>
+                    <span>Lead Web Developer (UI/UX)</span>
+                    <p>Leading the development of Home, Offers, and Order pages into functional UI/UX.</p>
+                </div>
+
+                <!-- Kad 3 -->
+                <div class="member-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Mohamad Sharul bin Sultan</h4>
+                    <span>Creative Design Thinker</span>
+                    <p>Focusing on visual concepts and professional wireframing in Figma.</p>
+                </div>
+
+                <!-- Kad 4 -->
+                <div class="member-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h4>Muhammad Syahrizan</h4>
+                    <span>Marketing Strategist</span>
+                    <p>Managing campus outreach and user acquisition strategies.</p>
+                </div>
+
+                <!-- Kad 5 -->
+                <div class="member-card">
+                    <i class="fas fa-database"></i>
+                    <h4>Muhammad Hafizuddin</h4>
+                    <span>Data Manager</span>
+                    <p>Coordinating menu content and verifying vendor prices.</p>
+                </div>
+
+                <!-- Kad 6 -->
+                <div class="member-card">
+                    <i class="fas fa-user-check"></i>
+                    <h4>Paydrol Anak Apeng</h4>
+                    <span>Quality Assurance</span>
+                    <p>Conducting usability testing to ensure a smooth experience.</p>
+                </div>
+
+                <!-- Kad 7 -->
+                <div class="member-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Zaime Bin Zainuddin</h4>
+                    <span>Documentation Lead</span>
+                    <p>Managing project reports and technical documentation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Blog Section (From blog.css) -->
+        <section class="dev-journey" id="dev-journey">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Journey from idea to E-commerce</h2>
+                    <div class="divider"></div>
+                    <p style="color: rgba(255,255,255,0.9); max-width: 800px; margin: 20px auto;">
+                       Follow the development journey of the D GourMeals platform from concept to launch.
+                    </p>
+                </div>
+                
+                <div class="blog-timeline">
+                    <!-- Fasa 1: Idea -->
+                    <div class="blog-post">
+                        <div class="blog-post-header">
+                            <div class="blog-post-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h3>Phase 1: Idea Generation</h3>
+                                <span class="blog-post-phase">Week 1-2</span>
+                            </div>
+                        </div>
+                        <p>We identified the problem of UMSKAL students having difficulty getting fresh food during peak hours. The original idea was to create a "digital bridge" between food vendors and residential colleges. We conducted an initial survey of 35 respondents to validate the need.</p>
+                        <div class="blog-post-tech">
+                            <span class="tech-tag">Google Forms</span>
+                            <span class="tech-tag">Brainstorming</span>
+                            <span class="tech-tag">Market Research</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Fasa 2: Reka Bentuk -->
+                    <div class="blog-post">
+                        <div class="blog-post-header">
+                            <div class="blog-post-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div>
+                                <h3>Phase 2: Wireframing & UI/UX Design</h3>
+                                <span class="blog-post-phase">Week 3-4</span>
+                            </div>
+                        </div>
+                        <p>Created complete wireframes for all pages using Figma. Focused on an intuitive user experience for students on the go. Green-turquoise theme colors were chosen to represent the freshness of the food, with orange accents for action.</p>
+                        <div class="blog-post-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">UI/UX Design</span>
+                            <span class="tech-tag">Prototyping</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Fasa 3: Pembangunan Frontend -->
+                    <div class="blog-post">
+                        <div class="blog-post-header">
+                            <div class="blog-post-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <h3>Phase 3: Pembangunan Frontend</h3>
+                                <span class="blog-post-phase">Week 5-7</span>
+                            </div>
+                        </div>
+                        <p>Developed user interface using HTML5, CSS3, and vanilla JavaScript. Developed complex shopping cart system with localStorage. Created Menu pages with dynamic subcategories for a smooth browsing experience.</p>
+                        <div class="blog-post-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3 Grid/Flexbox</span>
+                            <span class="tech-tag">JavaScript ES6</span>
+                            <span class="tech-tag">LocalStorage API</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Fasa 4: Integrasi AI -->
+                    <div class="blog-post">
+                        <div class="blog-post-header">
+                            <div class="blog-post-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div>
+                                <h3>Phase 4: AI Chatbot Integration</h3>
+                                <span class="blog-post-phase">Week 8</span>
+                            </div>
+                        </div>
+                        <p>Meets the IE12103 course requirement for AI-based functions. GourBot AI is developed with a contextual response system for common questions. This chatbot is capable of understanding questions in Malay and English regarding menu, prices, and delivery.</p>
+                        <div class="blog-post-tech">
+                            <span class="tech-tag">Natural Language Processing</span>
+                            <span class="tech-tag">Pattern Matching</span>
+                            <span class="tech-tag">AI Logic</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Fasa 5: Pelancaran -->
+                    <div class="blog-post">
+                        <div class="blog-post-header">
+                            <div class="blog-post-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h3>Phase 5: Testing & Launch</h3>
+                                <span class="blog-post-phase">Week 9-10</span>
+                            </div>
+                        </div>
+                        <p>Usability testing conducted with 15 UMSKAL students. Bugs in the shopping cart system fixed. Website optimized for mobile and desktop. Prototype ready for final demonstration with complete e-commerce features: catalog, cart, checkout, and AI support.</p>
+                        <div class="blog-post-tech">
+                            <span class="tech-tag">Usability Testing</span>
+                            <span class="tech-tag">Bug Fixing</span>
+                            <span class="tech-tag">Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="#dev-journey" class="btn-order">
+                        <i class="fas fa-code-branch"></i> View Source Code on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <a href="../index.html#menu-section" class="btn-order">
+                <i class="fas fa-shopping-cart"></i> Start Ordering Now
+            </a>
+            <p style="color: #6B7280; margin-top: 20px;">Try our fully functional prototype with cart system</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo"><i class="fas fa-bowl-food"></i> D Gour<span>Meals</span></div>
+                <p>Your favorite food delivery service. Fresh meals delivered fast to your doorstep.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1HGrEek372/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/umskal.official?igsh=MWlvN2ozNDZseTh0NQ=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@estmk_media?_r=1&_t=ZS-92fpIKNpME1"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="AboutUs.html">Blog</a></li>
+                    <li><a href="../GERAI/Menu.html">Menu</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="Contact.html">Help Center</a></li>
+                    <li><a href="../Terms.html">Terms & Conditions</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> UMSKAL, Labuan, Malaysia</p>
+                    <p><i class="fas fa-phone"></i> +60 87-123 456</p>
+                    <p><i class="fas fa-envelope"></i> support@dgourmeals.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 D GourMeals. Made with <i class="fas fa-heart" style="color: #EC4899;"></i> For UMSKAL</p>
+        </div>
+    </footer>
+
+    <script src="../cart-system.js"></script>
+    <script src="../script.js"></script>
+    <script src="BotAI.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof updateCartUIEverywhere === 'function') {
+            updateCartUIEverywhere();
+        }
+    });
+    </script>
+</body>
+</html>

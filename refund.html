@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy | D GourMeals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --dg-orange: #ffa600;
+            --text-main: #1f2937;
+            --text-gray: #6b7280;
+            --bg-body: #f9fafb;
+        }
+
+        body.policy-page {
+            background-color: var(--bg-body);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header.policy-header {
+            background: white;
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .policy-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-top: 8px solid var(--dg-orange);
+        }
+
+        h1 {
+            color: var(--text-main);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h3 {
+            color: var(--dg-orange);
+            margin-top: 30px;
+            font-size: 1.2rem;
+            border-left: 4px solid var(--dg-orange);
+            padding-left: 15px;
+        }
+
+        p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--dg-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(255, 166, 0, 0.3);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="policy-page">
+
+<header class="policy-header">
+  <a href="index.html">
+    <img src="ASSETS/DGourMealsLOGO.png" alt="D GourMeals Logo" height="55">
+  </a>
+</header>
+
+<section class="policy-container">
+  <h1><i class="fas fa-undo-alt"></i> Refund Policy</h1>
+
+  <p>At <strong>D GourMeals</strong>, we strive to ensure your satisfaction with every order. This policy outlines the conditions under which refunds may be requested.</p>
+
+  <h3><i class="fas fa-ban"></i> Order Cancellation</h3>
+  <p>Refunds are only available for orders that are cancelled <strong>before</strong> the preparation or delivery process begins. Once the kitchen starts preparing your meal, cancellation is no longer possible.</p>
+
+  <h3><i class="fas fa-exclamation-circle"></i> Damaged or Incorrect Items</h3>
+  <p>If you receive the wrong item or your meal is damaged, please report the issue within <strong>24 hours</strong> of delivery. We will evaluate the request for a dummy refund or a replacement order.</p>
+
+  <h3><i class="fas fa-wallet"></i> Refund Method</h3>
+  <p>As this system uses a simulated payment gateway, any approved "refunds" will be credited back to your virtual account or handled as a manual transaction between the user and the vendor.</p>
+
+  <h3><i class="fas fa-truck"></i> Delivery Fees</h3>
+  <p>Please note that delivery fees are generally <strong>non-refundable</strong> unless the order issue was directly caused by a system error or delivery delay on our part.</p>
+
+  <h3><i class="fas fa-user-times"></i> Change of Mind</h3>
+  <p>Refunds are <strong>not</strong> available for change-of-mind requests once the order has been delivered successfully to your location.</p>
+
+  <h3><i class="fas fa-clock"></i> Processing Time</h3>
+  <p>Even in our simulated environment, refund approvals may take <strong>3–7 business days</strong> to process, reflecting standard banking and payment service procedures.</p>
+
+  <h3><i class="fas fa-sync-alt"></i> Policy Updates</h3>
+  <p>D GourMeals reserves the right to update this Refund Policy at any time without prior notice. Users are encouraged to stay updated by reviewing this page regularly.</p>
+
+  <a href="index.html" class="back-btn">
+    <i class="fas fa-arrow-left"></i> Back to Home
+  </a>
+</section>
+
+</body>
+</html>
