@@ -11,14 +11,14 @@ const allRestaurantsData = {
         image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1080",
         category: "rice",
         items: [
-         { id: "sof_1", name: "Nasi Putih", price: 1.50, img: "../ASSETS/MenuKedai/sof_1-nasi-putih.jpg" },
-        { id: "sof_2", name: "Ayam Goreng", price: 3.00, img: "../ASSETS/MenuKedai/sof-2.jpg" },
+         { id: "sof_1", name: "Nasi Putih", price: 1.50, img: "/ASSETS/MenuKedai/sof_1-nasi-putih.jpg" },
+        { id: "sof_2", name: "Ayam Goreng", price: 3.00, img: "/ASSETS/MenuKedai/sof-2.jpg" },
         { id: "sof_3", name: "Sayur Campur", price: 4.00, img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400" },
         { id: "sof_4", name: "Ikan Bakar", price: 12.00, img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400" },
         { id: "sof_5", name: "Telur Dadar", price: 2.00, img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400" },
         { id: "sof_6", name: "Sambal Belacan", price: 1.00, img: "https://images.unsplash.com/photo-1606471191009-63994c53433b?w=400" },
         { id: "sof_7", name: "Sup Ayam", price: 7.00, img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400" },
-        { id: "sof_8", name: "Nasi Campur", price: 8.50, img: "../ASSETS/MenuKedai/sof-3.jpg" },
+        { id: "sof_8", name: "Nasi Campur", price: 8.50, img: "/ASSETS/MenuKedai/sof-3.jpg" },
         { id: "sof_9", name: "Daging Kicap", price: 9.00, img: "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=400" },
         { id: "sof_10", name: "Ulam-ulaman", price: 3.00, img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400" }
         ]
@@ -33,16 +33,16 @@ const allRestaurantsData = {
         image: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=1080",
         category: "fastfood",
         items: [
-        { id: "aa_1", name: "Ayam Kicap", price: 3.00, img: "../ASSETS/MenuKedai/aa-1.jpg" },
-        { id: "aa_2", name: "Ayam Masak Merah", price: 3.00, img: "../ASSETS/MenuKedai/aa-2.jpg" },
+        { id: "aa_1", name: "Ayam Kicap", price: 3.00, img: "/ASSETS/MenuKedai/aa-1.jpg" },
+        { id: "aa_2", name: "Ayam Masak Merah", price: 3.00, img: "/ASSETS/MenuKedai/aa-2.jpg" },
         { id: "aa_3", name: "Mee Goreng Mamak", price: 6.50, img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400" },
-        { id: "aa_4", name: "Nasi Kandar", price: 17.00, img: "../ASSETS/MenuKedai/aa-4.jpg" },
-        { id: "aa_5", name: "Nasi Goreng Ayam", price: 7.50, img: "../ASSETS/MenuKedai/aa-5.jpg" },
-        { id: "aa_6", name: "Nasi Goreng Seafood", price: 9.00, img: "../ASSETS/MenuKedai/aa-6.jpg" },
+        { id: "aa_4", name: "Nasi Kandar", price: 17.00, img: "/ASSETS/MenuKedai/aa-4.jpg" },
+        { id: "aa_5", name: "Nasi Goreng Ayam", price: 7.50, img: "/ASSETS/MenuKedai/aa-5.jpg" },
+        { id: "aa_6", name: "Nasi Goreng Seafood", price: 9.00, img: "/ASSETS/MenuKedai/aa-6.jpg" },
         { id: "aa_7", name: "Maggi Goreng", price: 5.50, img: "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400" },
         { id: "aa_8", name: "Ayam Tandoori", price: 7.50, img: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=400" },
-        { id: "aa_9", name: "Nasi Briyani", price: 12.00, img: "../ASSETS/MenuKedai/aa-9.jpg" },
-        { id: "aa_10", name: "Nasi Bujang", price: 4.00, img: "../ASSETS/MenuKedai/aa-10.jpg" }
+        { id: "aa_9", name: "Nasi Briyani", price: 12.00, img: "/ASSETS/MenuKedai/aa-9.jpg" },
+        { id: "aa_10", name: "Nasi Bujang", price: 4.00, img: "/ASSETS/MenuKedai/aa-10.jpg" }
     ]
     },
     "Kak D Pyor": {
@@ -54,16 +54,16 @@ const allRestaurantsData = {
         image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=1080",
         category: "rice",
         items: [
-        { id: "kdp_1", name: "Green Tea", price: 3.00, img: "../ASSETS/MenuKedai/kdp-1.jpg" },
-        { id: "kdp_2", name: "Manggo jucie", price: 3.00, img: "../ASSETS/MenuKedai/kdp-2.jpg" },
-        { id: "kdp_3", name: "Air Jagung", price: 3.00, img: "../ASSETS/MenuKedai/kdp-3.jpg" },
-        { id: "kdp_4", name: "jus Strawberry", price: 3.00, img: "../ASSETS/MenuKedai/kdp-4.jpg" },
-        { id: "kdp_5", name: "Air Apple Hijau", price: 3.00, img: "../ASSETS/MenuKedai/kdp-5.png" },
-        { id: "kdp_6", name: "Air Anggur", price: 3.00, img: "../ASSETS/MenuKedai/kdp-6.avif" },
-        { id: "kdp_7", name: "Honeydew juice", price: 3.00, img: "../ASSETS/MenuKedai/kdp-7.webp" },
-        { id: "kdp_8", name: "Milo Ice", price: 3.00, img: "../ASSETS/MenuKedai/kdp-8.png" },
-        { id: "kdp_9", name: "Nescafe ice", price: 3.00, img: "../ASSETS/MenuKedai/kdp-9.webp" },
-        { id: "kdp_10", name: "Keladi Juice", price: 3.00, img: "../ASSETS/MenuKedai/kdp-10.jpg" }    
+        { id: "kdp_1", name: "Green Tea", price: 3.00, img: "/ASSETS/MenuKedai/kdp-1.jpg" },
+        { id: "kdp_2", name: "Manggo jucie", price: 3.00, img: "/ASSETS/MenuKedai/kdp-2.jpg" },
+        { id: "kdp_3", name: "Air Jagung", price: 3.00, img: "/ASSETS/MenuKedai/kdp-3.jpg" },
+        { id: "kdp_4", name: "jus Strawberry", price: 3.00, img: "/ASSETS/MenuKedai/kdp-4.jpg" },
+        { id: "kdp_5", name: "Air Apple Hijau", price: 3.00, img: "/ASSETS/MenuKedai/kdp-5.png" },
+        { id: "kdp_6", name: "Air Anggur", price: 3.00, img: "/ASSETS/MenuKedai/kdp-6.avif" },
+        { id: "kdp_7", name: "Honeydew juice", price: 3.00, img: "/ASSETS/MenuKedai/kdp-7.webp" },
+        { id: "kdp_8", name: "Milo Ice", price: 3.00, img: "/ASSETS/MenuKedai/kdp-8.png" },
+        { id: "kdp_9", name: "Nescafe ice", price: 3.00, img: "/ASSETS/MenuKedai/kdp-9.webp" },
+        { id: "kdp_10", name: "Keladi Juice", price: 3.00, img: "/ASSETS/MenuKedai/kdp-10.jpg" }    
     ]
     },
     
@@ -76,16 +76,16 @@ const allRestaurantsData = {
         image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1080",
         category: "fastfood",
         items: [
-        { id: "mb_1", name: "Burger Telur", price: 3.50, img: "../ASSETS/MenuKedai/mb-1.jpg" },
-        { id: "mb_2", name: "Burger Ayam", price: 5.00, img: "../ASSETS/MenuKedai/mb-2.jpg" },
-        { id: "mb_3", name: "Burger Daging", price: 5.00, img: "../ASSETS/MenuKedai/mb-3.jpg" },
-        { id: "mb_4", name: "Burger Ayam Special", price: 6.00, img: "../ASSETS/MenuKedai/mb-4.jpg" },
-        { id: "mb_5", name: "Burger Daging Special", price: 6.00, img: "../ASSETS/MenuKedai/mb-5.jpg" },
-        { id: "mb_6", name: "Roti John Telur", price: 7.50, img: "../ASSETS/MenuKedai/mb-6.png" },
-        { id: "mb_7", name: "Roti John Ayam", price: 8.50, img: "../ASSETS/MenuKedai/mb-7.jpg" },
-        { id: "mb_8", name: "Roti John Daging", price: 8.50, img: "../ASSETS/MenuKedai/mb-8.jpg" },
-        { id: "mb_9", name: "Kentang Goreng", price: 3.00, img: "../ASSETS/MenuKedai/mb-9.jpeg" },
-        { id: "mb_10", name: "Full set", price: 15.00, img: "../ASSETS/MenuKedai/mb-10.webp" }       
+        { id: "mb_1", name: "Burger Telur", price: 3.50, img: "/ASSETS/MenuKedai/mb-1.jpg" },
+        { id: "mb_2", name: "Burger Ayam", price: 5.00, img: "/ASSETS/MenuKedai/mb-2.jpg" },
+        { id: "mb_3", name: "Burger Daging", price: 5.00, img: "/ASSETS/MenuKedai/mb-3.jpg" },
+        { id: "mb_4", name: "Burger Ayam Special", price: 6.00, img: "/ASSETS/MenuKedai/mb-4.jpg" },
+        { id: "mb_5", name: "Burger Daging Special", price: 6.00, img: "/ASSETS/MenuKedai/mb-5.jpg" },
+        { id: "mb_6", name: "Roti John Telur", price: 7.50, img: "/ASSETS/MenuKedai/mb-6.png" },
+        { id: "mb_7", name: "Roti John Ayam", price: 8.50, img: "/ASSETS/MenuKedai/mb-7.jpg" },
+        { id: "mb_8", name: "Roti John Daging", price: 8.50, img: "/ASSETS/MenuKedai/mb-8.jpg" },
+        { id: "mb_9", name: "Kentang Goreng", price: 3.00, img: "/ASSETS/MenuKedai/mb-9.jpeg" },
+        { id: "mb_10", name: "Full set", price: 15.00, img: "/ASSETS/MenuKedai/mb-10.webp" }       
     ]
     },
     "Kesumba": {
@@ -97,16 +97,16 @@ const allRestaurantsData = {
         image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=600",
         category: "rice",
          items: [
-        { id: "kb_1", name: "ice Lemon Tea", price: 4.00, img: "../ASSETS/MenuKedai/kb-1.webp" },
-        { id: "kb_2", name: "Kopi O", price: 3.00, img: "../ASSETS/MenuKedai/kb-2.jpg" },
-        { id: "kb_3", name: "Teh c Special", price: 6.00, img: "../ASSETS/MenuKedai/kb-3.jpg" },
-        { id: "kb_4", name: "Cheese Cake", price: 8.00, img: "../ASSETS/MenuKedai/kb-4.jpg" },
-        { id: "kb_5", name: "pudding", price: 6.00, img: "../ASSETS/MenuKedai/kb-5.jpg" },
-        { id: "kb_6", name: "Roti Sosej", price: 7.00, img: "../ASSETS/MenuKedai/kb-6.jpg" },
-        { id: "kb_7", name: "Kek Batik", price: 10.00, img: "../ASSETS/MenuKedai/kb-7.jpg" },
-        { id: "kb_8", name: "Salad", price: 7.00, img: "../ASSETS/MenuKedai/kb-8.jpg" },
-        { id: "kb_9", name: "ABC", price: 7.00, img: "../ASSETS/MenuKedai/kb-9.jpg" },
-        { id: "kb_10", name: "Waffle", price: 8.00, img: "../ASSETS/MenuKedai/kb-10.jpg" }        
+        { id: "kb_1", name: "ice Lemon Tea", price: 4.00, img: "/ASSETS/MenuKedai/kb-1.webp" },
+        { id: "kb_2", name: "Kopi O", price: 3.00, img: "/ASSETS/MenuKedai/kb-2.jpg" },
+        { id: "kb_3", name: "Teh c Special", price: 6.00, img: "/ASSETS/MenuKedai/kb-3.jpg" },
+        { id: "kb_4", name: "Cheese Cake", price: 8.00, img: "/ASSETS/MenuKedai/kb-4.jpg" },
+        { id: "kb_5", name: "pudding", price: 6.00, img: "/ASSETS/MenuKedai/kb-5.jpg" },
+        { id: "kb_6", name: "Roti Sosej", price: 7.00, img: "/ASSETS/MenuKedai/kb-6.jpg" },
+        { id: "kb_7", name: "Kek Batik", price: 10.00, img: "/ASSETS/MenuKedai/kb-7.jpg" },
+        { id: "kb_8", name: "Salad", price: 7.00, img: "/ASSETS/MenuKedai/kb-8.jpg" },
+        { id: "kb_9", name: "ABC", price: 7.00, img: "/ASSETS/MenuKedai/kb-9.jpg" },
+        { id: "kb_10", name: "Waffle", price: 8.00, img: "/ASSETS/MenuKedai/kb-10.jpg" }        
         ]
     }
 };
