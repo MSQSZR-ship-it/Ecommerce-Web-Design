@@ -76,16 +76,16 @@ const allRestaurantsData = {
         image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1080",
         category: "fastfood",
         items: [
-        { id: "mb_1", name: "Burger Telur", price: 3.50, img: "/ASSETS/MenuKedai/mb-1.jpg" },
-        { id: "mb_2", name: "Burger Ayam", price: 5.00, img: "/ASSETS/MenuKedai/mb-2.jpg" },
-        { id: "mb_3", name: "Burger Daging", price: 5.00, img: "/ASSETS/MenuKedai/mb-3.jpg" },
-        { id: "mb_4", name: "Burger Ayam Special", price: 6.00, img: "/ASSETS/MenuKedai/mb-4.jpg" },
-        { id: "mb_5", name: "Burger Daging Special", price: 6.00, img: "/ASSETS/MenuKedai/mb-5.jpg" },
-        { id: "mb_6", name: "Roti John Telur", price: 7.50, img: "/ASSETS/MenuKedai/mb-6.png" },
-        { id: "mb_7", name: "Roti John Ayam", price: 8.50, img: "/ASSETS/MenuKedai/mb-7.jpg" },
-        { id: "mb_8", name: "Roti John Daging", price: 8.50, img: "/ASSETS/MenuKedai/mb-8.jpg" },
-        { id: "mb_9", name: "Kentang Goreng", price: 3.00, img: "/ASSETS/MenuKedai/mb-9.jpeg" },
-        { id: "mb_10", name: "Full set", price: 15.00, img: "/ASSETS/MenuKedai/mb-10.webp" }       
+        { id: "mb_1", name: "Burger Telur", price: 3.50, img: "ASSETS/MenuKedai/mb-1.jpg" },
+        { id: "mb_2", name: "Burger Ayam", price: 5.00, img: "ASSETS/MenuKedai/mb-2.jpg" },
+        { id: "mb_3", name: "Burger Daging", price: 5.00, img: "ASSETS/MenuKedai/mb-3.jpg" },
+        { id: "mb_4", name: "Burger Ayam Special", price: 6.00, img: "ASSETS/MenuKedai/mb-4.jpg" },
+        { id: "mb_5", name: "Burger Daging Special", price: 6.00, img: "ASSETS/MenuKedai/mb-5.jpg" },
+        { id: "mb_6", name: "Roti John Telur", price: 7.50, img: "ASSETS/MenuKedai/mb-6.png" },
+        { id: "mb_7", name: "Roti John Ayam", price: 8.50, img: "ASSETS/MenuKedai/mb-7.jpg" },
+        { id: "mb_8", name: "Roti John Daging", price: 8.50, img: "ASSETS/MenuKedai/mb-8.jpg" },
+        { id: "mb_9", name: "Kentang Goreng", price: 3.00, img: "ASSETS/MenuKedai/mb-9.jpeg" },
+        { id: "mb_10", name: "Full set", price: 15.00, img: "ASSETS/MenuKedai/mb-10.webp" }       
     ]
     },
     "Kesumba": {
