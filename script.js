@@ -106,7 +106,9 @@ const allRestaurantsData = {
         { id: "kb_7", name: "Kek Batik", price: 10.00, img: "ASSETS/MenuKedai/kb-7.jpg" },
         { id: "kb_8", name: "Salad", price: 7.00, img: "ASSETS/MenuKedai/kb-8.jpg" },
         { id: "kb_9", name: "ABC", price: 7.00, img: "ASSETS/MenuKedai/kb-9.jpg" },
-        { id: "kb_10", name: "Waffle", price: 8.00, img: "ASSETS/MenuKedai/kb-10.jpg" }        
+        { id: "kb_10", name: "Waffle", price: 8.00, img: "ASSETS/MenuKedai/kb-10.jpg" } 
+         { id: "tgm_1", name: "Ice Cream vanilla", price: 5.00, img: "../ASSETS/MenuKedai/tgm-1.jpg" },
+        { id: "tgm_2", name: "Ice Creem KitKat", price: 5.00, img: "../ASSETS/MenuKedai/tgm-2.png" },       
         ]
     }
 };
