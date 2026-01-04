@@ -63,7 +63,7 @@ const allRestaurantsData = {
         { id: "kdp_7", name: "Honeydew juice", price: 3.00, img: "ASSETS/MenuKedai/kdp-7.webp" },
         { id: "kdp_8", name: "Milo Ice", price: 3.00, img: "ASSETS/MenuKedai/kdp-8.png" },
         { id: "kdp_9", name: "Nescafe ice", price: 3.00, img: "ASSETS/MenuKedai/kdp-9.webp" },
-        { id: "kdp_10", name: "Keladi Juice", price: 3.00, img: "ASSETS/MenuKedai/kdp-10.jpg" }    
+        { id: "kdp_10", name: "Keladi Juice", price: 3.00, img: "ASSETS/MenuKedai/kdp-10.jpg" },   
     ]
     },
     
@@ -85,7 +85,7 @@ const allRestaurantsData = {
         { id: "mb_7", name: "Roti John Ayam", price: 8.50, img: "ASSETS/MenuKedai/mb-7.jpg" },
         { id: "mb_8", name: "Roti John Daging", price: 8.50, img: "ASSETS/MenuKedai/mb-8.jpg" },
         { id: "mb_9", name: "Kentang Goreng", price: 3.00, img: "ASSETS/MenuKedai/mb-9.jpeg" },
-        { id: "mb_10", name: "Full set", price: 15.00, img: "ASSETS/MenuKedai/mb-10.webp" }       
+        { id: "mb_10", name: "Full set", price: 15.00, img: "ASSETS/MenuKedai/mb-10.webp" },      
     ]
     },
     "Kesumba": {
@@ -106,9 +106,7 @@ const allRestaurantsData = {
         { id: "kb_7", name: "Kek Batik", price: 10.00, img: "ASSETS/MenuKedai/kb-7.jpg" },
         { id: "kb_8", name: "Salad", price: 7.00, img: "ASSETS/MenuKedai/kb-8.jpg" },
         { id: "kb_9", name: "ABC", price: 7.00, img: "ASSETS/MenuKedai/kb-9.jpg" },
-        { id: "kb_10", name: "Waffle", price: 8.00, img: "ASSETS/MenuKedai/kb-10.jpg" } 
-         { id: "tgm_1", name: "Ice Cream vanilla", price: 5.00, img: "../ASSETS/MenuKedai/tgm-1.jpg" },
-        { id: "tgm_2", name: "Ice Creem KitKat", price: 5.00, img: "../ASSETS/MenuKedai/tgm-2.png" },       
+        { id: "kb_10", name: "Waffle", price: 8.00, img: "ASSETS/MenuKedai/kb-10.jpg" }       
         ]
     }
 };
